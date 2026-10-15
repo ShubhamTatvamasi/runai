@@ -29,6 +29,6 @@ helm upgrade -i runai-backend runai/control-plane \
   --set global.gatewayAPI.parentRefs[0].namespace="$RUNAI_GATEWAY_NAMESPACE" \
   --set global.gatewayAPI.parentRefs[0].sectionName=https \
   --set tenantsManager.config.adminUsername="$RUNAI_ADMIN" \
-  --set-string tenantsManager.config.adminPassword='<STRONG_ADMIN_PASSWORD>'
+  --set tenantsManager.config.adminPassword="$STRONG_ADMIN_PASSWORD"
 ```
 
