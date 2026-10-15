@@ -7,7 +7,7 @@ RUNAI_DOMAIN=runai.k8s.shubhamtatvamasi.com
 RUNAI_GATEWAY_NAME=traefik-gateway
 RUNAI_GATEWAY_NAMESPACE=traefik
 RUNAI_ADMIN=admin@shubhamtatvamasi.com
-STRONG_ADMIN_PASSWORD=$(openssl rand -base64 48 | tr -dc 'A-Za-z0-9' | head -c 32)
+STRONG_ADMIN_PASSWORD=$(openssl rand -base64 48 | tr -dc 'A-Za-z0-9!@#$%^&*_-+=?' | head -c 20)
 ```
 
 Add helm repo:
