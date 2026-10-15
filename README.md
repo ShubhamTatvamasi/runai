@@ -21,6 +21,7 @@ Install runai:
 ```bash
 helm upgrade -i runai-backend runai/control-plane \
   --namespace runai-backend \
+  --create-namespace \
   --set global.domain="$RUNAI_DOMAIN" \
   --set global.ingress.enabled=false \
   --set global.gatewayAPI.enabled=true \
