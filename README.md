@@ -17,7 +17,7 @@ helm repo add runai https://helm.ngc.nvidia.com/nvidia/runai \
   --password="$NGC_API_KEY"
 ```
 
-Install runai:
+Install runai control-plane:
 ```bash
 helm upgrade -i runai-backend runai/control-plane \
   --namespace runai-backend \
@@ -31,4 +31,24 @@ helm upgrade -i runai-backend runai/control-plane \
   --set tenantsManager.config.adminUsername="$RUNAI_ADMIN" \
   --set tenantsManager.config.adminPassword="$STRONG_ADMIN_PASSWORD"
 ```
+
+---
+
+Install runai cluster:
+```bash
+helm upgrade -i runai-cluster runai/runai-cluster \
+  --namespace runai \
+  --create-namespace \
+  --set controlPlane.url=$RUNAI_DOMAIN \
+  --set controlPlane.clientSecret=xxxxxxx \
+  --set cluster.uid=xxxxxxx \
+  --set cluster.url=https://$RUNAI_DOMAIN \
+  --set clusterConfig.global.ingress.enabled=false \
+  --set clusterConfig.global.gatewayAPI.enabled=true \
+  --set clusterConfig.global.gatewayAPI.name="$RUNAI_GATEWAY_NAME" \
+  --set clusterConfig.global.gatewayAPI.namespace="$RUNAI_GATEWAY_NAMESPACE" \
+  --set global.fipsMode=off
+```
+
+
 
