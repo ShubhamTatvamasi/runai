@@ -1,5 +1,7 @@
 # runai
 
+https://run-ai-docs.nvidia.com/self-hosted/getting-started/installation/install-using-helm/install-control-plane
+
 Set variables:
 ```bash
 NGC_API_KEY=nvapi-xxxxxxxxx
