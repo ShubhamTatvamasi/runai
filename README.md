@@ -52,5 +52,11 @@ helm upgrade -i runai-cluster runai/runai-cluster \
   --set global.fipsMode=off
 ```
 
+Cleanup:
+```bash
+kubectl delete runaiconfigs.run.ai runai -n runai
+```
+
+
 
 
