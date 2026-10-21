@@ -56,9 +56,10 @@ helm upgrade -i runai-cluster runai/runai-cluster \
 
 Cleanup:
 ```bash
+kubectl delete ns runai
 kubectl delete runaiconfigs.run.ai runai -n runai
 ```
-
+> Remove the finalizers from this resource first
 
 
 
